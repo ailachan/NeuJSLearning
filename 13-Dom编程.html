@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="d1" style="width: 200px;height: 200px;background-color: aqua;">
+			
+		</div>
+		<form>
+			<input id="txt" type="text" />
+			
+			
+		</form>
+		
+		<script>
+			var d = document.getElementById("d1")
+			d.onmouseover = function(){
+				d.style.backgroundColor = "red"
+			}
+			d.onmouseout = function(){
+				d.style.backgroundColor="aqua"
+			}
+			d.onmousedown = function(){
+				d.style.backgroundColor="green"
+			}
+			d.onmouseup = function(){
+				d.style.backgroundColor = "red"
+			}
+			
+			var ipt = document.getElementById("txt")
+			ipt.onblur = function(){
+				this.style.backgroundColor = "white"
+				console.log(this.value)
+			}
+			ipt.onchange = function(){
+				console.log(this.value)
+			}
+			ipt.onfocus = function(){
+				this.style.backgroundColor = "red"
+			}
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

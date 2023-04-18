@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.wordSize1{
+				font-size: 20px;
+			}
+			.wordSize2{
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			document.write("<h1>我是一个标题</h1>")
+		</script>
+		<script>
+			//反引号（左上角的那个键）可以创建多行字符串
+			var s= `
+				<p>测试文本p1</p>
+				<div>测试div</div>
+			`;
+			document.write(s)
+		</script>
+		
+		<div id="d1">
+			
+		</div>
+		<p id="p1" class="wordSize1" style="color: red;background-color: aquamarine;">
+			测试文本
+		</p>
+		<button>点击修改样式</button>
+		
+		<script>
+			/* 
+			 write()	这个方法可以把任意字符串插入到文档中
+			 createElement()	创建一个元素节点
+			 appendChild()	将新节点追加到子节点列表的末尾
+			 insertBefore()	将新节点插入在某个子节点前面
+			 repalceChild()	将新节点替换旧节点
+			 cloneNode()	复制节点
+			 removeChild()	移除节点
+			 remove() 删除自己
+			 after()后边添加
+			 before() 前面添加
+			 */
+			var p = document.createElement("p") //创建元素节点对象
+			var d1 = document.getElementById("d1")
+			
+			p.innerText="我是创建的p标签"
+			p.onclick = function(){
+				console.log("点击")
+			}
+			
+			d1.appendChild(p) //添加子节点
+			
+			
+			var pBefore = p.cloneNode()
+			var pAfter = p.cloneNode()
+			d1.insertBefore(pBefore,p)
+			d1.after(pAfter)
+			
+			
+			
+			/**
+			 * 样式的操作
+			 * 
+			 */
+			var btn = document.getElementsByTagName("button")[0]
+			var p1 = document.getElementById("p1")
+			btn.onclick = function(){
+				//1、直接修改style
+				// p1.style.color = "black"
+				// p1.style.backgroundColor = "green"
+				
+				//2、修改class
+				p1.setAttribute("class","wordSize2")
+			}
+		
+			
+		</script>
+	</body>
+</html>
