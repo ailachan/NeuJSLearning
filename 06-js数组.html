@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/**
+			 * 数组
+			 * 
+			 */
+			//创建数组
+			var a = [1,2,4]
+			var b = [1,1.5,true,"hello"] //允许包含不同的数据类型
+			var c = [] //空数组
+			//空数组另一种定义方式，这里的new实际上是语法糖，跟面向对象完全没关系
+			//Array实际上是函数，内置的，直接调用
+			var d = new Array() 
+			var e = Array()
+			var f = Array(1,2,3,4)
+			
+			console.log(a)
+			console.log(b)
+			console.log(c)
+			console.log(d)
+			console.log(e)
+			console.log(f)
+			
+			/**
+			 * 数组操作
+			 * 
+			 */
+			//下标操作(从0开始)
+			b = [1,1.5,true,"hello"]
+			console.log(b[2])
+			//修改
+			b[1]=1000;
+			console.log(b)
+			
+			//数组长度
+			console.log(b.length)
+			
+			//循环
+			for(i in b){ //默认迭代的是索引
+				console.log(b[i])
+			}
+			
+			//concat连接数组
+			var a = [1,2,3]
+			var b = [4,5,6]
+			console.log(a.concat(b))
+			
+			//join，通过一个连接符将数组转为字符串
+			console.log(a.join("___"))
+			
+			//reverse ，反转数组
+			console.log(a.reverse())
+			//pop，push末尾操作，pop弹出，push新增
+			a.pop()
+			console.log(a)
+			a.push(1000)
+			console.log(a)
+			
+			//shift，unshift数组头操作，shift弹出，unshift新增
+			a.shift()
+			console.log(a)
+			a.unshift(2000)
+			console.log(a)
+			
+			//slice 从数组中切出一段
+			console.log(b.slice(0,2)) //参数是索引位置，顾头不顾腚
+			
+			//sort 排序
+			console.log(a.sort())
+			//toString 转为逗号分隔的字符串
+			console.log(a.toString())
+			
+			
+		</script>
+	</body>
+</html>

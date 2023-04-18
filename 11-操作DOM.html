@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="title">操作DOM</h1>
+		<div id="p1" name="ppp" title="aaa">
+			<p>测试1</p>
+			可以通过document对象，遍历文档树，获取节点对象进而操作文档对象
+			<p>测试2</p>
+		</div>
+		<p>测试标签p1</p>
+		<p>测试标签p2</p>
+		<div name="d1" class="a b c">测试文本1</div>
+		<div name="d1" class="a b">测试文本2</div>
+		<div class="b c">测试文本3</div>
+		
+		<script>
+			/**
+			 * 获取节点对象（js对象）
+			 */
+			//根据id获取对象，由于默认id唯一，所以获取到的对象是唯一
+			var elH1 = document.getElementById("title")
+			console.log(elH1)
+			
+			//获取修改属性
+			console.log(elH1.id)
+			elH1.name = "测试name属性"
+			console.log(elH1.name)
+			elH1.onclick = function(){
+				alert("添加的点击属性")
+			}
+			
+			//根据标签名获取标签对象,由于标签名很多，获取的对象不唯一，所以返回值为数组
+			var ps =  document.getElementsByTagName("p")
+			console.log(ps)//数组
+			
+			//修改标签
+			//this一般指向函数调用者
+			ps[1].onclick = function(){
+				this.innerHTML = "修改后的文本"
+			}
+			
+			//根据name属性获取标签对象，因为name属性是允许重复的，所以返回也是一个数组
+			var dvs = document.getElementsByName("d1")
+			console.log(dvs)
+			
+			//根据class属性获取标签对象，class属性一般也不唯一，返回也是一个数组
+			var ds = document.getElementsByClassName("b")
+			console.log(ds)
+			
+			
+			//属性操作
+			var p1 = document.getElementById("p1")
+			console.log(p1.getAttribute("name"))
+			console.log(p1.getAttribute("title"))
+			
+			p1.setAttribute("name","hello")
+			console.log(p1.getAttribute("name"))
+			
+			p1.removeAttribute("title")
+			console.log(p1.getAttribute("title"))
+			
+			/**
+			 * 节点层次操作(只包含元素节点)
+			 *  children	获取当前元素节点的所有子节点
+				firstElementChild	获取当前元素节点的第一个子节点
+				lastElementChild	获取当前元素节点的最后一个子节点
+				parentNode	获取当前节点的父节点
+				previousElementSibling	获取当前节点的前一个同级节点
+				nextElementSibling	获取当前节点的后一个同级节点
+				attributes	获取当前元素节点的所有属性节点集合
+			 * 
+			 */
+			console.log(p1.childNodes) //包含所有节点
+			console.log(p1.children) //只包含元素节点
+			console.log(p1.attributes)
+			
+			
+		</script>
+	</body>
+</html>

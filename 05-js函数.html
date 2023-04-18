@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//标准定义方式
+			function hello(){
+				console.log("hello")
+			}
+			//变量定义
+			var test = function(){
+				console.log("test")
+			}
+			hello()
+			test()
+			
+			/**
+			 * 函数的参数，定义时指定参数，调用时不一定完全按照定义来传
+			 */
+			function add(x,y){
+				return x+y
+			}
+			console.log(add(1,2)) //正常调用  3
+			console.log(add(10)) //传一个参数 NaN
+			console.log(add())//不传参 NaN
+			console.log(add(1,2,3,4,5)) //传多个参数 3
+			
+			
+			/**
+			 * 函数作为参数
+			 * 	f:需要一个函数参数
+			 *  a，b：两个普通参数
+			 *exec函数的作用，时调用f，计算结果返回，a和b作为f的参数 
+			 */
+			function exec(f,a,b){
+				return f(a,b)
+			}
+			console.log(exec(add,100,200))
+			
+			//减函数
+			function sub(a,b){
+				return a-b;
+			}
+			console.log(exec(sub,100,200))
+			
+			//直接定义一个匿名函数传参
+			console.log(exec(function(a,b){
+				return a*b
+			},100,200))
+			
+			/**
+			 * 函数作为返回值返回（闭包 对应之前大家学过的python来看）
+			 */
+			function getFunc(){
+				var a = 100; //定义一个局部变量
+				
+				//定义一个函数
+				function numExc(b){
+					return a*b
+				}
+				//返回函数
+				return numExc;
+			}
+			
+			var f =  getFunc() //调用，返回一个函数,f实际上就是numExc
+			var result = f(200) //调用f，就是调用numExc
+			//打印结果
+			console.log(result)
+			
+			//简化上面的调用
+			console.log(getFunc()(200))
+			
+			/**
+			 * 以上，函数中又定义函数，并且内部函数使用了外部函数的
+			 * 变量，那么，这个局部变量就与普通局部变量不一样了，需要
+			 * 额外处理，因为声明周期需要加长，一般底层编译器会将这样的
+			 *变量和内部函数捆绑在一起，我们称之为闭包。
+			 * 
+			 */
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/* 
+				js对象（花括号包围的键值对）：
+					{键：值，键：值}
+			 */
+			//定义对象
+			var a = {
+				name:"张三",
+				age:20,
+				hello:function(){
+					console.log(this.name+"say hello")
+				}
+			}
+			var b = {} //空对象
+			var d =new Object() //空对象
+			
+			console.log(a)
+			console.log(b)
+			console.log(d)
+			
+			/**
+			 *对象成员的访问 
+			 */
+			console.log(a.name) //属性的访问
+			a.hello()  //方法访问
+			
+			//对象中添加成员
+			a.sex = "男"
+			a.test = function(){
+				console.log("test")
+			}
+			
+			//删除成员
+			delete a.name
+			console.log(a)
+			
+			/**
+			 * 常用默认可以直接使用的全局对象：
+			 * Math
+			 * Date
+			 * String
+			 */
+			/**Math：
+			 * 	abs(x)	返回x的绝对值  
+				ceil(x)	返回大于等于x的最小整数  
+				exp(x)	返回e的x次方  
+				floor(x)	返回小于等于x的最大整数  
+				round(x)	舍入到最近整数,(小于或等于0.5小数舍去)  
+				sqrt(x)	返回x的平方根  
+				random()	随机数
+			 * 
+			 */
+			console.log(Math.random()) //0-1
+			
+			/**
+			 * Date
+			 * 
+			 * 必须用New运算符创建一个实例				var date = new Date(“July 4,2004,6:25:22”)				var date = new Date(“July 4,2004”)				var date = new Date(2004,7,4,6,25,22)// 2004年8月4日				var date = new Date(2004,7,4)// 2004年8月4日				var date = new Date(“2004/7/4”)				var date = new Date(Milliseconds)				var date = new Date();
+				获取日期和时间的方法					getYear()：返回年数；（小于2000年返回两位）					getFullYear()：返回年数；					getMonth()：返回当月号数；（比实际小1）					getDate()：返回当日号数；					getDay()：返回星期几；（0表示星期日）					getHours()：返回小时数；					getMinutes()：返回分钟数；					getSeconds()：返回秒数；					getTime()：返回毫秒数；
+			 *  
+			 */
+			/**String:
+			   charAt(i)	返回指定索引位置处的字符
+			   charCodeAt(i)	返回一个整数，代表指定位置上字符的 Unicode 编码
+			   concat(str)	连接字符串
+			   indexOf(str)	返回 String 对象内第一次出现子字符串的字符位置（注意：从左至右查找，返回整数值）
+			   lastIndexOf(str)	返回 String 对象中子字符串最后出现的位置
+			   replace(str1,str2)	返回将str1替换为str2后的字符串
+			   slice(start,end)	返回字符串中起始位置为start,结束位置为end(不包括end)的子字符串
+			   split(separator, limit)	将字符串以separator作为分割符切割成多个子字符串，并将他们作为一个数组返回；如果有limit参数则返回数组的limit个元素
+			   substr(start,length)	返回一个从指定位置开始的指定长度的子字符串
+			   substring(start,end)	返回一个指定位置之间的子字符串，不包括end
+			   toLowerCase	返回一个字符串，字符串中的字母被转换为小写字母
+			   toUpperCase	跟上边的相反
+			 * 
+			 * 
+			 * 
+			 */
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

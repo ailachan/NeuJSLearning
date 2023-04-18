@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+			html标签有很多on开头的事件属性，主要
+			就是用于关联执行JavaScript脚本的
+		 -->
+		<button onclick="clkBtn()">点击跳转</button>
+		<button onclick="stopInterval()">停止定时器</button>
+		<button onclick="openJd()">新窗口中打开京东</button>
+		<script>
+			function clkBtn(){
+				//浏览器跳转
+				location.href = "http://www.taobao.com"
+			}
+			
+			/**
+			 * 弹框
+			 */
+			//alert("hello")
+			// var result = confirm("提示框")
+			// if(result){
+			// 	console.log("点击了确定")
+			// }else{
+			// 	console.log("点击了取消")
+			// }
+			// var result = prompt("输入框")
+			// console.log(result)
+			
+			
+			/**
+			 * 浏览器中的定时器
+			 */
+			var i = 0;
+			setTimeout(function(){
+				console.log("定时执行一次到时间了")
+			},6000) //定时执行一次，第二个参数以毫秒为单位
+			
+			var re = setInterval(function(){
+				i++
+				console.log("时间到了"+i)
+			},3000) //定时不断执行
+			
+			function stopInterval(){
+				clearInterval(re) //需要将要停止的定时器的返回值，传入
+			}
+			
+			
+			//新窗口打开window.open()
+			function openJd(){
+				open("http://www.jd.com")
+			}
+			
+			
+		</script>
+		
+		
+	</body>
+</html>
